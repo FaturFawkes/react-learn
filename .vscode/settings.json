@@ -2,5 +2,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "notebook.formatOnSave.enabled": true
+  "notebook.formatOnSave.enabled": true,
+  "editor.tabSize": 2, // Mengatur lebar tab (dalam spasi)
+  "editor.insertSpaces": true // Gunakan spasi sebagai pengganti tab
 }
