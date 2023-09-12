@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile</title>
+  </head>
+  <body>
+    <!-- Section Heading and Paragraph -->
+    <div>
+      <h1>This is HTML Content</h1>
+      <h2>This is HTML Content</h2>
+      <h3>This is HTML Content</h3>
+      <h4>This is HTML Content</h4>
+      <h5>This is HTML Content</h5>
+      <p>Paragraph</p>
+    </div>
+
+    <!-- Styling Paragraph -->
+    <div>
+      <strong>Membuat tulisan menjadi tebal</strong>
+      <br />
+      <em>Membuat tulisan menjadi miring</em>
+      <br />
+      <s>Membuat tulisan menjadi tercoret</s>
+      <br />
+      <a href="youtube.com">Ini Link Youtube</a>
+      <!-- target = blank -> untuk membuka tab baru ketika di klik user -->
+    </div>
+    <!-- Show Image -->
+    <div>
+      <img src="assets/rick-roll.jpeg " alt="rick roll" />
+    </div>
+    <!-- Ordered List -->
+    <ol type="A">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Javascript</li>
+    </ol>
+    <!-- Unordered List -->
+    <ul type="circle">
+      <li>Javascript</li>
+      <li>
+        Framework dari Javascript :
+        <ul type="square">
+          <li>React</li>
+          <li>Angular</li>
+          <li>Vue</li>
+        </ul>
+      </li>
+    </ul>
+    <!-- Table -->
+    <div>
+      <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Company 1</td>
+          <td>Nur Fatchurohman</td>
+          <td>Indonesia</td>
+        </tr>
+        <tr>
+          <td>Company 2</td>
+          <td>Bennica Belladior</td>
+          <td>Japan</td>
+        </tr>
+      </table>
+    </div>
+    <br />
+    <!-- Form Tag -->
+    <div>
+      <form action="register" method="post">
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div>
+            <label for="full-name">Full name</label>
+            <input
+              id="full-name"
+              placeholder="Type your fullname here...."
+              type="text"
+            />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input
+              id="email"
+              placeholder="Type your email here...."
+              type="text"
+            />
+          </div>
+          <div>
+            <label for="password">Passoword</label>
+            <input
+              type="password"
+              placeholder="Type password..."
+              id="password"
+            />
+          </div>
+          <div>
+            <label for="file">Upload file</label>
+            <input type="file" placeholder="Insert your file here" id="file" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <br />
+    <div>
+      <form action="">
+        <fieldset>
+          <legend>Payment Information</legend>
+          <div>
+            <label for="credit-number">Credit Number</label>
+            <input
+              type="number"
+              id="credit-number"
+              placeholder="Your credit number"
+            />
+          </div>
+          <div>
+            <label for="expired-date">Expired Date</label>
+            <input type="datetime-local" id="expired-date" />
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <!-- Embed Youtube Video -->
+    <div>
+      <iframe
+        id="ytplayer"
+        type="text/html"
+        width="720"
+        height="405"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </body>
+</html>
+
+<!-- NOTES -->
+<!-- <section> -> merupakan hierarki teratas yang berisi dari sekumpulan <div> -->
+<!-- <div> tag yang berisi sekumpulan elemen yang lebih kecil, seperti h1, h2, img, bahkan <div> itu sendiri-->
