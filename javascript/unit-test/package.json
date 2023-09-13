@@ -1,0 +1,25 @@
+{
+  "name": "unit-test",
+  "version": "1.0.0",
+  "description": "Learning Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --collect-coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FaturFawkes/react-learn.git"
+  },
+  "keywords": [
+    "learn"
+  ],
+  "author": "Nur Fatchurohman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FaturFawkes/react-learn/issues"
+  },
+  "homepage": "https://github.com/FaturFawkes/react-learn#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
