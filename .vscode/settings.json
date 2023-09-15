@@ -11,5 +11,8 @@
   "typescript.format.insertSpaceAfterConstructor": false,
   "typescript.format.semicolons": "remove",
   "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true // Gunakan spasi sebagai pengganti tab
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "editor.suggest.showFunctions": true,
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "js/ts.implicitProjectConfig.strictFunctionTypes": true // Gunakan spasi sebagai pengganti tab
 }
