@@ -47,7 +47,17 @@ interface Person {
   getFullName(): string;
 }
 
-class PersonImpl {
+// Implement Interface
+const person: Person = {
+  firstName: "Bnox",
+  lastName: "Geming",
+  age: 30,
+  getFullName(): string {
+    return this.firstName + " " + this.lastName
+  }
+}
+
+class PersonImpl implements Person{
   firstName: string
   lastName: string
   age?: number
@@ -63,5 +73,5 @@ class PersonImpl {
   } 
 } 
 
-const person1: Person = new PersonImpl("Nur", "Fatchurohman")
+const person1: Person = new PersonImpl("Fatur", "Rohman") 
 console.log(person1.getFullName())
