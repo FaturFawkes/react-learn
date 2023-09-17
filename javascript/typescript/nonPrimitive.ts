@@ -42,3 +42,64 @@ let fish: Fish = new Fish();
 let reptil: Reptil = new Reptil();
 let aves: Aves = new Aves();
 // console.log("Type of FIsh", fish.type)
+
+type behavioutType = {
+  type: string;
+};
+
+type addressType = {
+  city?: string;
+  country: string;
+};
+
+interface objType {
+  name: string;
+  age: number;
+  job: string;
+  isMarried: boolean;
+  address: addressType;
+  hobbies: string[];
+}
+
+// create object from interface
+const person_1: objType = {
+  name: "Nur Fatchurohman",
+  age: 21,
+  job: "Fullstack Developer",
+  isMarried: false,
+  address: {
+    city: "Bogor",
+    country: "Indonesia",
+  },
+  hobbies: ["Coding", "Running", "Mancing"],
+};
+console.log(person_1)
+
+interface personalType extends addressType {
+  name: string;
+}
+
+const peoples: personalType[] = [
+  {
+    name: "John Doe",
+    country: "UK",
+    city: "London",
+  },
+  {
+    name: "Budi",
+    country: "Indonesia",
+    city: "Jakarta",
+  },
+  {
+    name: "Fatur",
+    country: "Indonesia",
+    city: "Bogor",
+  },
+];
+
+let arrPeople = peoples.forEach((people: personalType, index: number) => {
+  console.log(people.city)
+  return people
+})
+
+// console.log(arrPeople)
