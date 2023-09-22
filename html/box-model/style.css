@@ -120,8 +120,8 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
-  content: none;
+  main: "";
+  main: none;
 }
 table {
   border-collapse: collapse;
@@ -141,10 +141,11 @@ body {
 }
 
 .container {
-  width: 1000px;
+  width: 1200px;
   margin: auto;
   border: 2px solid black;
   background-color: white;
+  padding-top: 20px;
 }
 
 .header {
@@ -175,7 +176,7 @@ body {
 
 .hero img {
   /* background-image: url("../assets/rick-roll.jpeg"); */
-  height: 250px;
+  height: 400px;
   width: 100%;
   margin: auto;
   /* background-size: cover; */
@@ -183,23 +184,27 @@ body {
   background-repeat: no-repeat;
   border-top: 5px salmon solid;
   border-bottom: 5px lightblue solid;
+  background-position: 0 -200px;
 }
 
-.content {
+.main {
   padding: 20px;
+  width: 600px;
+  box-sizing: border-box;
+  float: left;
 }
 
-.content h1 {
+.main h1 {
   font-size: 38px;
   font-weight: 500;
 }
 
-.content .author {
+.main .author {
   margin-top: 10px;
   margin-bottom: 20px;
 }
 
-.content p {
+.main p {
   margin-bottom: 20px;
 }
 
@@ -211,4 +216,38 @@ body {
 
 .footer .copy {
   text-align: center;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.sidebar {
+  width: 500px;
+  float: right;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.sidebar img {
+  width: 150px;
+  height: 100px;
+  float: left ;
+  padding-right: 10px;
+}
+
+.sidebar p {
+  line-height: 1.2;
 }
