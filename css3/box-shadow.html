@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Shadow</title>
+    <style>
+      div:hover {
+        height: 300px;
+        width: 300px;
+        background-color: rgb(255, 230, 0);
+        margin: 50px auto;
+        box-shadow: 0px 0px 70px 30px rgba(255, 172, 18, 0.7); /* (x-offset, y-offset, color) / (x-offset, y-offset, spread, color)  */
+        /* inset: nilai diletakkan sebelum x-offset dan akan membuat shadow berada di dalam */
+        border-radius: 50%;
+        transition: all;
+        transition-duration: 0.4s;
+      }
+       div{
+        height: 300px;
+        width: 300px;
+        background-color: rgb(255, 230, 0);
+        margin: 50px auto;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
