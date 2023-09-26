@@ -1,14 +1,15 @@
 .container-1 {
   padding: 25px;
-  margin: 25px;
-  width: 1200px;
+  /* margin: 25px; */
+  box-sizing: border-box;
+  width: 100%;
   height: 50px;
   background-color: yellow;
 }
 
 .container-2 {
   padding: 25px;
-  margin: 25%;
+  /* margin: 25%; */
   width: 80%;
   height: 50px;
   background-color: orange;
@@ -20,6 +21,11 @@
 }
 
 .container-4 {
+  width: 80%;
+  height: 250px;
+}
+
+.container-5 {
   width: 80%;
   height: 250px;
 }
@@ -55,4 +61,19 @@
 
 .animation-visited:visited {
   color: green;
+}
+
+.display-content-1 {
+  background-color: salmon;
+  display: block;
+}
+
+.display-content-2 {
+  display: inline-block;
+  background-color: aquamarine;
+}
+
+.display-content-3 {
+  background-color: brown;
+  display: none;
 }
