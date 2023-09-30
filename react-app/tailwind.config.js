@@ -2,8 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: { colors: {
+      "nice-sky-blue": "#2563eb",
+      "nice-amber": "#d97706" 
+    },},
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
 
