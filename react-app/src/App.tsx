@@ -1,9 +1,37 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import CustomerService from "./components/CustomerService";
-import Card from "./components/Card";
 
-class App extends Component {
+type CounterState = {
+  count: number;
+  color?: string;
+  isOpen: boolean;
+};
+
+type CounterProps = {
+  initialVal: number;
+  initialColor: string;
+  initialIsOpen: boolean;
+};
+
+class App extends Component<CounterProps, CounterState> {
+  constructor(props: CounterProps) {
+    super(props);
+    this.state = {
+      count: props.initialVal || 0,
+      color: props.initialColor,
+      isOpen: props.initialIsOpen,
+    };
+  }
+  increment = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+  decrement = () => {
+    this.setState({ count: this.state.count - 1 });
+  };
+  showModal = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
   render() {
     const dummy = [
       {
@@ -25,10 +53,47 @@ class App extends Component {
         desc: "Lorem ipsum dolor sit amet",
       },
     ];
-
+    const { count, color, isOpen } = this.state;
     return (
       <div className="w-full">
         <Navbar />
+        <div>
+          <button
+            className="w-40 h-10 bg-amber-500 text-white font-semibold"
+            onClick={this.showModal}
+          >
+            Open Modal
+          </button>
+        </div>
+        {isOpen ? (
+          <div className="w-60 h-40 bg-white rounded-md shadow-xl"></div>
+        ) : (
+          <></>
+        )}
+        <div>
+          <h3 className="w-40 h-20 bg-green-500 text-white mt-10">
+            Result: {count}
+          </h3>
+        </div>
+        <div className="flex flex-row">
+          <button onClick={this.increment} className="bg-blue-500 text-white">
+            Increment
+          </button>
+          <button onClick={this.decrement} className="bg-blue-500 text-white">
+            Decrement
+          </button>
+        </div>
+        <div>
+          <h1 className={`${color}`}>
+            {color ? "Color has changed" : "Initial Color"}
+          </h1>
+          <button
+            onClick={() => this.setState({ color: "bg-green-500" })}
+            className="bg-blue-500 text-white"
+          >
+            Change Color
+          </button>
+        </div>
         <div className="m-20">
           <div className="flex flex-row">
             {dummy.map((item: any) => {
