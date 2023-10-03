@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import CustomerService from "./components/CustomerService";
+import Card from "./components/Card";
+import Fashion from "./dummy/shoes.json";
+import Modal from "./components/Modal";
 
 type CounterState = {
   count: number;
   color?: string;
   isOpen: boolean;
+  isModal: boolean;
 };
 
 type CounterProps = {
@@ -21,6 +25,7 @@ class App extends Component<CounterProps, CounterState> {
       count: props.initialVal || 0,
       color: props.initialColor,
       isOpen: props.initialIsOpen,
+      isModal: false,
     };
   }
   increment = () => {
@@ -33,30 +38,21 @@ class App extends Component<CounterProps, CounterState> {
     this.setState({ isOpen: !this.state.isOpen });
   };
   render() {
-    const dummy = [
-      {
-        image:
-          "https://m.media-amazon.com/images/I/71-mN+-rjwL._AC_UY1100_.jpg",
-        title: "T-Shirt",
-        desc: "Lorem ipsum dolor sit amet",
-      },
-      {
-        image:
-          "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/f655b4fb-35e9-4a63-acf8-c02dfd78cfda/zoom-fly-5-road-running-shoes-lkx7Zp.png",
-        title: "Shoes",
-        desc: "Lorem ipsum dolor sit amet",
-      },
-      {
-        image:
-          "https://cdn.eraspace.com/media/catalog/product/a/p/apple_watch_se_gen_2_40mm_gps_silver_aluminium_case_with_white_sport_band_1.jpg",
-        title: "Watch",
-        desc: "Lorem ipsum dolor sit amet",
-      },
-    ];
-    const { count, color, isOpen } = this.state;
+    const { count, color, isOpen, isModal } = this.state;
     return (
       <div className="w-full">
         <Navbar />
+        <div className="my-10">
+          <button
+            className="w-20 h-10 bg-blue-500 text-white"
+            onClick={() => this.setState({ isModal: !isModal })}
+          >
+            Trigger Modal
+          </button>
+          <Modal handleModal={isModal} id="modal">
+            <h1 className="text-black">Modal Open</h1>
+          </Modal>
+        </div>
         <div>
           <button
             className="w-40 h-10 bg-amber-500 text-white font-semibold"
@@ -94,31 +90,18 @@ class App extends Component<CounterProps, CounterState> {
             Change Color
           </button>
         </div>
-        <div className="m-20">
-          <div className="flex flex-row">
-            {dummy.map((item: any) => {
-              return (
-                <div className="flex flex-row m-10 space-x-10">
-                  <div className="card  w-96 flex-1 bg-base-100 shadow-xl hover:scale-90 transition-all">
-                    <figure>
-                      <img src={item.image} alt="Shoes" />
-                    </figure>
-                    <div className="card-body">
-                      <h2 className="card-title">{item.title}!</h2>
-                      <p>{item.desc}</p>
-                      <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Buy Now</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+        <div className="flex flex-row">
+          {Fashion.map((item) => {
+            return (
+              <Card
+                id={item.id}
+                title={item.title}
+                description={item.desc}
+                image={item.image}
+              />
+            );
+          })}
         </div>
-        {/* <div>
-          <Card />
-        </div> */}
         <div className="mt-20">
           <div className="sm:h-20 sm:w-40 md:w-52 lg:w-full bg-blue-800"></div>
           <div className="sm:h-20 sm:w-40 md:w-52 lg:w-full bg-yellow-800"></div>
